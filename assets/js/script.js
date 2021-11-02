@@ -17,7 +17,9 @@ var clear =document.querySelectorAll("button.clearBtn");
 var save =document.querySelectorAll("button.saveBtn");
 var form =document.querySelectorAll("textarea.form");
 var hour = moment().hours();
+var row = document.getElementsByClassName("row")
 
+hour=parseInt(hour);
 
 setInterval(function () {
  currentDay.innerHTML = moment().format(
@@ -68,25 +70,115 @@ clear.forEach(item => {
         }
     })
 })
+function setColors(a,color){
+    a.style.background = color;
+}
 
-form.forEach(item => {
-    var time=parseInt($(item).attr('id'));
-    item.addEventListener("click", item => {
+function colors(){
+    var time=parseInt($("#9").attr('id'));
 
-    hour=parseInt(hour);
-    console.log(time);
-    console.log(hour);
-
+    if (time < 8) {
+        time += 12;
+    }
     
     if (hour > time) {
-        $(item).addClass("past");
+        setColors(row, "black");
     } else if (hour < time) {
-        $(item).addClass("future");
+        setColors(row, "blue");
     } else {
-        $(item).addClass("present");
+        setColors(row, "green");
     }
-    });
-});
+
+    var time=parseInt($("#10").attr('id'));
+    
+    if (hour > time) {
+        $("#10").addClass("past");
+    } else if (hour < time) {
+        $("#10").addClass("future");
+    } else {
+        $("#10").addClass("present");
+    }
+
+    var time=parseInt($("#11").attr('id'));
+    
+    if (hour > time) {
+        $("#11").addClass("past");
+    } else if (hour < time) {
+        $("#11").addClass("future");
+    } else {
+        $("#11").addClass("present");
+    }
+
+    var time=parseInt($("#12").attr('id'));
+    
+    if (hour > time) {
+        $("#12").addClass("past");
+    } else if (hour < time) {
+        $("#12").addClass("future");
+    } else {
+        $("#12").addClass("present");
+    }
+
+    var time=parseInt($("#1").attr('id'));
+    
+    if (hour > time) {
+        $("#1").addClass("past");
+    } else if (hour < time) {
+        $("#1").addClass("future");
+    } else {
+        $("#1").addClass("present");
+    }
+
+    var time=parseInt($("#2").attr('id'));
+    
+    if (hour > time) {
+        $("#2").addClass("past");
+    } else if (hour < time) {
+        $("#2").addClass("future");
+    } else {
+        setColors(row, "green");
+    }
+
+    var time=parseInt($("#3").attr('id'));
+    
+    if (hour > time) {
+        $("#3").addClass("past");
+    } else if (hour < time) {
+        $("#3").addClass("future");
+    } else {
+        $("#3").addClass("present");
+    }
+
+    var time=parseInt($("#4").attr('id'));
+    
+    if (hour > time) {
+        $("#4").addClass("past");
+    } else if (hour < time) {
+        $("#4").addClass("future");
+    } else {
+        $("#4").addClass("present");
+    }
+
+    var time=parseInt($("#6").attr('id'));
+    
+    if (hour > time) {
+        $("#6").addClass("past");
+    } else if (hour < time) {
+        $("#6").addClass("future");
+    } else {
+        $("#6").addClass("present");
+    }
+
+    var time=parseInt($("#7").attr('id'));
+    
+    if (hour > time) {
+        $("#7").addClass("past");
+    } else if (hour < time) {
+        $("#7").addClass("future");
+    } else {
+        $("#7").addClass("present");
+    }
+}
 
 save.forEach(item => {item.addEventListener("click", event => {
     for(var i=0; i< numbers2.length; i++)
@@ -178,3 +270,6 @@ $(window).on('load',function(){
         $("#7").text(localStorage.getItem((7)));
     }
 })
+
+
+colors();
