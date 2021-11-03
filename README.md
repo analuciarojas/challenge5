@@ -24,7 +24,6 @@ This project consisted on creating a simple calendar application that allows a u
             <button type="button" class="clearBtn" id="nine"><i class="fas fa-eraser"></i></button>
         </div>
       </div>
-
 ```            
 
 * **Save function using jQuery**
@@ -41,7 +40,6 @@ save.forEach(item => {item.addEventListener("click", event => {
 
 })
 });  
-
 ```
 
 
@@ -55,7 +53,6 @@ $(window).on('load',function(){
         }  
     }
 })
-  
 ```   
 
 
