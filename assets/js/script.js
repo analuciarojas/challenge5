@@ -15,7 +15,6 @@ var numbers=["one","two","three","four","five","six","seven","","nine","ten","el
 var numbers2=["on","tw","thre","fou","fiv","si","seve","","nin","te","eleve","twelv",];
 var clear =document.querySelectorAll("button.clearBtn");
 var save =document.querySelectorAll("button.saveBtn");
-var form =document.querySelectorAll("textarea.form");
 var hour = moment().hours();
 var row = document.querySelectorAll("#r")
 hour=parseInt(hour);
@@ -78,11 +77,11 @@ function colors(){
             }
     
             if (hour > time) {
-                    document.getElementById(i).style.backgroundColor="lightgray";
+                    document.getElementById(i).style.backgroundColor="#d3d3d3";
             } else if (hour < time) {
-                    document.getElementById(i).style.backgroundColor="lightgreen";
+                    document.getElementById(i).style.backgroundColor="#77dd77";
             } else {
-                    document.getElementById(i).style.backgroundColor="red";
+                    document.getElementById(i).style.backgroundColor="#ff6961";
             }
         }
     }
@@ -102,11 +101,11 @@ function colors(){
             }
     
             if (hour > time) {
-                    document.getElementById(i).style.backgroundColor="lightgray";
+                    document.getElementById(i).style.backgroundColor="#d3d3d3";
             } else if (hour < time) {
-                    document.getElementById(i).style.backgroundColor="lightgreen";
+                    document.getElementById(i).style.backgroundColor="#77dd77";
             } else {
-                    document.getElementById(i).style.backgroundColor="red";
+                    document.getElementById(i).style.backgroundColor="#ff6961";
             }
         }
     }
