@@ -13,10 +13,11 @@ var sixclearB=document.querySelector("#six");
 var sevenclearB=document.querySelector("#seven");
 var numbers=["one","two","three","four","five","six","seven","","nine","ten","eleven","twelve",];
 var numbers2=["on","tw","thre","fou","fiv","si","seve","","nin","te","eleve","twelv",];
-var clear =document.querySelectorAll("button.clearBtn");
-var save =document.querySelectorAll("button.saveBtn");
+var numbers3=["o","t","thr","fo","fi","s","sev","","ni","t","elev","twel",];
+var numbers4=["onee","twoo","threee","fourr","fivee","sixx","sevenn","","ninee","tenn","elevenn","twelvee",];
+var clear =document.querySelectorAll(".clearBtn");
+var save =document.querySelectorAll(".saveBtn");
 var hour = moment().hours();
-var row = document.querySelectorAll("#r")
 hour=parseInt(hour);
 
 setInterval(function () {
@@ -27,23 +28,48 @@ setInterval(function () {
 
 clear.forEach(item => {
     item.addEventListener("click", event => {
-        for(var i=0; i< numbers.length; i++)
-        {
+        if($( event.target ).is( "i" )){
+            for(var i=0; i< numbers4.length; i++)
+            {
+            if(event.target.id===numbers4[i]){
+                localStorage.setItem((i+1), "");
+                $("#"+(i+1)).val("");
+            }
+            }
+            console.log("button clicked");
+          }
+        else{
+            for(var i=0; i< numbers.length; i++)
+            {
             if(event.target.id===numbers[i]){
                 localStorage.setItem((i+1), "");
                 $("#"+(i+1)).val("");
             }
+            }
         }
     })
-})
+});
 
 save.forEach(item => {item.addEventListener("click", event => {
+
+    if($( event.target ).is( "i" )){
+        for(var i=0; i< numbers3.length; i++)
+        {
+        if(event.target.id===numbers3[i]){
+            var e = $("#"+(i+1)).val().trim();
+            localStorage.setItem((i+1),e);
+        }
+        }
+        console.log("button clicked");
+      }
+    else{
     for(var i=0; i< numbers2.length; i++)
     {
         if(event.target.id===numbers2[i]){
             var e = $("#"+(i+1)).val().trim();
-            localStorage.setItem((i+1),JSON.stringify(e));
+            localStorage.setItem((i+1),e);
         }
+    }
     }
 
 })
@@ -56,7 +82,7 @@ $(window).on('load',function(){
             $("#"+(i+1)).text(localStorage.getItem((i+1)));
         }  
     }
-})
+});
 
 
 function colors(){
@@ -111,6 +137,6 @@ function colors(){
     }
 
     
-}
+};
 
 colors();
