@@ -72,7 +72,7 @@ This is a an image of the work day scheduler website in a computer view.
 
 ![Ana Lucia scheduler computer image](assets/images/preview.png)
 
-This is a preview of the work day scheduler website in a cell phone view. 
+This is a preview of the work day scheduler website. 
 
 ![Ana Lucia scheduler computer preview](assets/gif/preview.gif)
 
